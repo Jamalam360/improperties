@@ -1,6 +1,7 @@
 interface StringifyOptions {
     indent?: string;
     assignment?: string;
+    space?: boolean;
 }
 
 export function stringify(
@@ -15,7 +16,7 @@ function stringifyWithIndent(
     indentLevel: number,
     opts?: StringifyOptions,
 ): string {
-    const { indent = "  ", assignment = " : " } = opts || {};
+    const { indent = "  ", assignment = " : ", space = false } = opts || {};
 
     let output = "";
     let loops = 0;
@@ -74,6 +75,10 @@ function stringifyWithIndent(
             output += `${indent.repeat(indentLevel)}${
                 getKey(key)
             }${assignment}${getValue(value as string)}\n`;
+        }
+
+        if (space) {
+            output += "\n";
         }
 
         loops++;

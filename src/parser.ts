@@ -1,4 +1,4 @@
-export function parse<T>(input: string): T {
+export function parse<T = Record<string, unknown>>(input: string): T {
     const obj: { [key: string]: unknown } = {};
 
     const lines = input.split("\n");
