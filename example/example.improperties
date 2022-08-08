@@ -1,0 +1,19 @@
+! This is an improperties file. Comments can start with # or !.
+
+! = or : can be used for assignment.
+environment : development ! or environment = production
+
+! Objects can be defined with the following syntax:
+server ->
+    port: 8080
+    host: localhost
+--
+
+! Lists can be defined with the following syntax:
+files ->
+    - /path/to/file1
+    - /path/to/file2
+    - /path/to/file3
+--
+
+! The full specification can be found at https://github.com/FoundationGames/Improperties-Specification.
