@@ -8,10 +8,6 @@ jobs:
   test:
     runs-on: 'ubuntu-20.04'
     timeout-minutes: 30
-    strategy:
-      fail-fast: false
-      matrix:
-        deno: [canary]
 
     steps:
       - name: Clone repository
@@ -20,7 +16,7 @@ jobs:
       - name: Set up Deno
         uses: denoland/setup-deno@v1.0.0
         with:
-          deno-version: ${{ matrix.deno }}
+          deno-version: 'canary'
 
       - name: Run tests
         run: deno test -A
@@ -57,4 +53,3 @@ jobs:
 
       - name: Lint
         run: deno lint
-        
