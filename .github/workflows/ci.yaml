@@ -21,22 +21,6 @@ jobs:
       - name: Run tests
         run: deno test -A
 
-      - name: Generate lcov
-        shell: bash
-        run: |
-         deno coverage ./cov/ --lcov --exclude="test\\.(ts)" > cov.lcov
-      - name: Upload coverage
-        uses: codecov/codecov-action@v1
-        with:
-          name: ${{ matrix.os }}-${{ matrix.deno }}
-          files: cov.lcov
-
-      - name: Remove coverage report
-        shell: bash
-        run: |
-          rm -rf ./cov/
-          rm cov.lcov
-
   lint:
     runs-on: 'ubuntu-20.04'
     steps:
