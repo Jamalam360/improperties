@@ -2,7 +2,7 @@
 
 ! = or : can be used for assignment.
 environment : development ! or environment = production
-
+ 
 ! Objects can be defined with the following syntax:
 server ->
     port: 8080
