@@ -1,3 +1,7 @@
+/**
+ * Standard Improperties unit tests.
+ */
+
 // deno-lint-ignore-file no-explicit-any
 import { parse, stringify } from "../mod.ts";
 import { assert } from "https://deno.land/std@v0.150.0/testing/asserts.ts";

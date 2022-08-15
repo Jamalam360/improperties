@@ -1,3 +1,13 @@
+/**
+ * Parses an Improperties string into an object.
+ *
+ * @remarks
+ * A type parameter can be used to specify the type of the object.
+ * No type checking is performed, so you must ensure that the object is of the correct type.
+ *
+ * @param input - The Improperties string to parse
+ * @returns A parsed object according to the type parameter
+ */
 export function parse<T = Record<string, unknown>>(input: string): T {
     const obj: { [key: string]: unknown } = {};
 
